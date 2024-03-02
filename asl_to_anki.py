@@ -38,10 +38,17 @@ card = genanki.Model(
   templates=[
     {
       'name': 'Card',
-      'qfmt': '{{front}}',
-      'afmt': """{{FrontSide}} <hr id="answer"> {{back}}""",
-    },
-  ])
+      'qfmt': '<div class="center">{{front}}</div>',
+      'afmt': """<div class="center">{{FrontSide}}</div> <hr id="answer"> <div class="center">{{back}}</div>""",
+    }],
+  css = """
+    .center{
+        width : fit-content;
+        margin : auto;
+        min-height : 100px;
+    }
+  """
+  )
 
 deck = genanki.Deck(
   2059400192,
@@ -52,12 +59,14 @@ for word, gif in zip(words, gifs):
     if config["eng_to_asl"].lower() == "true":
         note = genanki.Note(
           model=card,
-          fields=[word, f"<img src='{gif}'/>"])
+          fields=[word, f"<img src='{gif}'/>"],
+          tags = ["eng_to_asl"])
         deck.add_note(note)
     if config["asl_to_eng"].lower() == "true":
         note = genanki.Note(
           model=card,
-          fields=[f"<img src='{gif}'/>", word])
+          fields=[f"<img src='{gif}'/>", word],
+          tags = ["asl_to_eng"])
         deck.add_note(note)
 
 package = genanki.Package(deck)
