@@ -1,0 +1,7 @@
+{
+    "word_list_file_name" : "test",
+    "deck_name" : "Test",
+    "output_name" : "output",
+    "eng_to_asl" : "True",
+    "asl_to_eng" : "False" 
+}
