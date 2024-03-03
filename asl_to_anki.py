@@ -47,13 +47,16 @@ def dl_gifs(links):
     if not os.path.exists(directory):
         os.makedirs(directory)
     for word in links:    
-        link = links[word]
-        with open(f"{directory}/{slugify(word)}.mp4", "wb") as f:
-            f.write(requests.get(link).content)
-        mp4 = VC(f"{directory}/{slugify(word)}.mp4")
-        mp4.write_gif(f"{directory}/{slugify(word)}.gif", fps=10,program='imageio', verbose = False, logger = None)
-        gifs[word] = f"{slugify(word)}.gif"
-        os.remove(f"{directory}/{slugify(word)}.mp4")
+        try:
+            link = links[word]
+            with open(f"{directory}/{slugify(word)}.mp4", "wb") as f:
+                f.write(requests.get(link).content)
+            mp4 = VC(f"{directory}/{slugify(word)}.mp4")
+            mp4.write_gif(f"{directory}/{slugify(word)}.gif", fps=10,program='imageio', verbose = False, logger = None)
+            gifs[word] = f"{slugify(word)}.gif"
+            os.remove(f"{directory}/{slugify(word)}.mp4")
+        except:
+           print(f"Couldn't get {word}. See readme")
     return directory, gifs
 
 def make_deck(gifs, direc, config):
