@@ -1,6 +1,6 @@
 {
     "words_file" : "300words",
-    "links_file" : "",
+    "links_file" : "300replacements",
     "deck_name" : "itsabijection HANDSPEAK 300 Signs for Beginners",
     "output_name" : "asl300",
     "eng_to_asl" : "True",
