@@ -1,7 +1,7 @@
 {
-    "word_list_file_name" : "test",
-    "deck_name" : "Test",
-    "output_name" : "output",
+    "word_list_file_name" : "300words",
+    "deck_name" : "itsabijection HANDSPEAK 300 Signs for Beginners",
+    "output_name" : "asl300",
     "eng_to_asl" : "True",
-    "asl_to_eng" : "False" 
+    "asl_to_eng" : "True" 
 }
