@@ -10,4 +10,5 @@ If ```links_file``` is not set to "", the code will use the link provided to fin
 - ```output_name```: the name of the ```.apkg``` file
 - ```eng_to_asl```: set to ```True``` if you want cards where the front is english and the back is ASL
 - ```asl_to_eng```: the opposite
+
 The last two options are **NOT** mutually exclusive.
