@@ -1,4 +1,7 @@
-This lets you programmatically create Anki cards from HANDSPEAK. There are broadly two ways to use it:
+This lets you programmatically create Anki cards from HANDSPEAK. 
+If you would just like the 300 signs in the file, please [download them here](https://ankiweb.net/shared/by-author/1700513665).
+
+There are broadly two ways to use this tool:
 
 # Completely automated
 Fill a file with a list of words, one word per line. Set the ```words_file``` field in config.json to this file name. Set the ```links_file``` to ''. Run ```python3 asl_to_anki.py config.json```. Expect some words not to be able to be found. This brings us to the next way.
